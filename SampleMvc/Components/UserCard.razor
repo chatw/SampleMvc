@@ -1,0 +1,31 @@
+﻿
+<h3>UserCard</h3>
+
+<p>@UserName</p>
+<p>@Email</p>
+
+<button type="button" @onclick="ShowDetails">Toggle Details</button>
+
+@if (_showDetails)
+{
+    <p>Job: @Job</p>
+    <p>Salary: @Salary.ToString("C")</p>
+}
+
+@code {
+    [Parameter] public string UserName { get; set; } = string.Empty;
+    [Parameter]
+    public string Email { get; set; } = string.Empty;
+    [Parameter]
+    public string Job { get; set; } = string.Empty;
+    [Parameter]
+    public int Salary { get; set; } = 0;
+
+    private bool _showDetails;
+
+    private void ShowDetails()
+    {
+        _showDetails = !_showDetails;
+    }
+
+}

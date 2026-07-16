@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<component type="typeof(SampleMvc.Components.UserCard)"
+           render-mode="Server"
+           param-UserName="@("John Doe")"
+           param-Email="@("john.doe@example.com")"
+           param-Job="@("Software Engineer")"
+           param-Salary="@(75000)" />
